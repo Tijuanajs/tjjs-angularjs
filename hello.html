@@ -10,8 +10,9 @@
   </div>
 
   <div ng-controller='CartController'>
+	Search: <input ng-model="searchText">
 	<ul>
-		<li ng-repeat="item in items">
+		<li ng-repeat="item in items | filter:searchText">
 			<span>{{item.title}}</span>
 			<input ng-model='item.quantity'>
 			<span>{{item.price | currency}}</span>
