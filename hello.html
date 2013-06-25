@@ -8,6 +8,18 @@
     <input ng-model='greeting.text'></br>
     <span ng-bind="greeting.text"></span>, World
   </div>
+
+  <div ng-controller='CartController'>
+	<ul>
+		<li ng-repeat="item in items">
+			<span>{{item.title}}</span>
+			<input ng-model='item.quantity'>
+			<span>{{item.price | currency}}</span>
+			<span>{{item.price * item.quantity | currency}}</span>
+			<button ng-click="remove($index)">Remove</button>
+		</li>
+	</ul>
+  </div>
 </body>
 </body>
 </html>
